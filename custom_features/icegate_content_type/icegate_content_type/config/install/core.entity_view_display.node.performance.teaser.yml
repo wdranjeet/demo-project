@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.performance.field_performance_value
+    - node.type.performance
+  module:
+    - user
+id: node.performance.teaser
+targetEntityType: node
+bundle: performance
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_performance_value: true

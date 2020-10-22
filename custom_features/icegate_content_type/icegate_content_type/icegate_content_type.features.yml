@@ -1,0 +1,9 @@
+excluded:
+  - core.base_field_override.node.our_services.promote
+  - core.base_field_override.node.performance.promote
+  - block.block.views_block__icegate_services_tabs_block_1
+  - block.block.views_block__performance_block_1
+  - views.view.icegate_services
+  - views.view.icegate_services_tabs
+  - views.view.performance
+required: true

@@ -1,0 +1,11 @@
+bootstrap_tabs:
+  version: VERSION
+  css:
+    theme:
+      css/bootstrap_quicktabs.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupal.ajax
+    - core/drupalSettings

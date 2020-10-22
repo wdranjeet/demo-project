@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.slides.body
+    - field.field.node.slides.field_link
+    - field.field.node.slides.field_slide_image
+    - node.type.slides
+  module:
+    - text
+    - user
+id: node.slides.teaser
+targetEntityType: node
+bundle: slides
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_link: true
+  field_slide_image: true

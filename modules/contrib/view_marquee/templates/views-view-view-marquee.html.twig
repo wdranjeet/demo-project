@@ -1,0 +1,31 @@
+{#
+/**
+ * Default theme implementation for Views to output a TARDIS archive.
+ *
+ * Available variables:
+ * - options: View plugin style options:
+ *   - row_class: Row classes.
+ *   - direction: Marquee direction
+ *   - behavior: Marquee direction behavior
+ *   - speed: Marquee speed
+ *   - delay: Marquee delay
+ * @see template_preprocess_views_view_view_marquee()
+ *
+ */
+#}
+{%
+  set classes = [
+    'views-view-marquee',
+    'marquee-direction-'~options.direction
+  ]
+%}
+{{ attach_library('view_marquee/marquee-style') }}
+<div{{ attributes.addClass(classes) }}>
+  <marquee {{ direction }} {{ behavior }} {{ speed }} {{ delay }} {{ mouseover }}>
+    {% for row in rows %}
+      <div {{ row_class}}>
+      {{ row }}
+      </div>
+    {% endfor %}
+  </marquee>
+</div>

@@ -1,0 +1,178 @@
+<?php
+
+/**
+ * @file
+ * Nescafe Foundation Theme File.
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\Core\Url;
+use Drupal\file\Entity\File;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\media\Entity\Media;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+
+
+/**
+ * Implements hook_preprocess_node() for NODE document templates.
+ */
+function icegate_preprocess_node(&$variables) {
+  // To process playlist details content type.
+    $node = $variables['node'];
+    
+  // For cache clear.
+  $variables['#cache']['max-age'] = 0;
+  \Drupal::service('page_cache_kill_switch')->trigger();
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function icegate_library_info_alter(&$libraries, $extension) {
+  
+}
+
+
+/**
+ * Implements template_preprocess_page.
+ *
+ * Add convenience variables and template suggestions.
+ */
+function icegate_preprocess_page(&$variables) {
+  $uri_logo = '';
+  $host = \Drupal::request()->getSchemeAndHttpHost();
+  $menu_tree = \Drupal::menuTree();
+  // Main Navigation Name .
+  $menu_name = 'main';
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+  $sub_tree = $menu_tree->load($menu_name, $parameters);
+  $manipulators = [
+    ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+    ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+  ];
+  $tree = $menu_tree->transform($sub_tree, $manipulators);
+  $menu = $menu_tree->build($tree);
+  $menu_data = [];
+  if (!empty($menu['#items'])) {
+    $main_menu = $menu['#items'];
+    foreach ($main_menu as $value) {
+      if ($value['url']->isRouted() == FALSE) {
+        $menu_data[] = [
+          'menu_title' => $value['title'],
+          'menu_external_url' => $value['url']->toString(),
+        ];
+      }
+      else {
+        $menu_data[] = [
+          'menu_title' => $value['title'],
+          'menu_external_url' => $host.$value['url']->toString(),
+          //'menu_internal_url' => ltrim(\Drupal::service('path.alias_manager')
+          // ->getAliasByPath('/' . $value['url']->getInternalPath()), "/"),
+        ];
+      }
+    }
+  }
+  // Variable for Site Navigation .
+  $variables['main_navigation'] = $menu_data;
+  // Get path of logo from theme settings or user form.
+  $variables['relative_logo_url'] = theme_get_setting('logo.url');
+
+  $logo_link_url = \Drupal::service('path.alias_manager')
+    ->getAliasByPath(\Drupal::config('system.site')->get('page')['front']);
+  if (strpos(\Drupal::config('system.site')
+      ->get('page')['front'], '/node/') !== FALSE) {
+    $front_node = \Drupal::config('system.site')->get('page')['front'];
+    $node_array = (explode('node/', $front_node));
+    if (!empty($node_array)) {
+      $front_nid = $node_array[count($node_array) - 1];
+      if (is_numeric($front_nid)) {
+        $node = Node::load($front_nid);
+        if(!empty($node)){
+          $nodeType = $node->getType();
+          if ($nodeType === 'home_page') {
+            $logo_link_url = '/';
+          }
+        }
+      }
+    }
+  }
+
+ 
+}
+
+/**
+ * Implements template_preprocess_paragraph().
+ */
+function icegate_preprocess_paragraph(&$variables) {
+  $variables['base_path'] = base_path();
+  $paragraph = $variables['paragraph'];
+  if (!empty($paragraph->get('type')->first())) {
+    $paragraph_type = $paragraph->get('type')
+      ->first()
+      ->get('target_id')
+      ->getString();
+  }
+
+  // Get sideimage and text
+  $variables['paragraph_type'] = $paragraph_type;
+ 
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function icegate_preprocess_block(&$variables) {
+  // dump($variables['elements']['content']);
+  // die("=============================");
+  // $variables['base_path'] = base_path();
+  // $paragraph = $variables['paragraph'];
+  // if (!empty($paragraph->get('type')->first())) {
+  //   $paragraph_type = $paragraph->get('type')
+  //     ->first()
+  //     ->get('target_id')
+  //     ->getString();
+  // }
+
+  // // Get sideimage and text
+  // $variables['paragraph_type'] = $paragraph_type;
+ 
+}
+
+/**
+ * Function to process URI for CTA's.
+ *
+ * @param string $uri
+ *   Url.
+ */
+function process_cta_uri($uri) {
+  if (strpos($uri, 'entity:') !== FALSE) {
+    $link_url = \Drupal::service('path.alias_manager')->getAliasByPath(str_replace('entity:', '/', $uri));
+    $link_url = \Drupal::service('path.alias_manager')->getAliasByPath($link_url);
+  }
+  elseif (strpos($uri, 'internal:') !== FALSE) {
+    $link_url = \Drupal::service('path.alias_manager')->getAliasByPath(str_replace('internal:', '', $uri));
+    $link_url = \Drupal::service('path.alias_manager')->getAliasByPath($link_url);
+  }
+  else {
+    $link_url = $uri;
+  }
+  return $link_url;
+}
+
+/**
+ * Get the file uri.
+ */
+function get_file_uri($file_id) {
+  if (!empty($file_id)) {
+    $file = File::load($file_id);
+    if (!empty($file)) {
+      $uri = $file->getFileUri();
+    }
+  }
+  return $uri;
+}

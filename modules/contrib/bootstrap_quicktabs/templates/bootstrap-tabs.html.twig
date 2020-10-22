@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme for Bootstrap Quick Tabs tab content.
+ *
+ * Available variables:
+ * - content: array of tab-content
+ * - tabs: array of tabs
+ * - options: array of user configuration options
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if options.position != 'below' %}
+    {% include 'bootstrap-tabs-tabs.html.twig' with {'options': options, 'tabs': tabs} %}
+{% endif %}
+<div{{ create_attribute({'class': 'tab-content'}) }}>
+    {% for block_id, block in content %}
+        <div{{ create_attribute({'class': [block.classes], 'id': block_id, 'role':'tabpanel'}) }}>
+{{ block.content }}
+        </div>
+    {% endfor %}
+</div>
+{% if options.position == 'below' %}
+    {% include 'bootstrap-tabs-tabs.html.twig' with {'options': options, 'tabs': tabs} %}
+{% endif %}

@@ -1,0 +1,54 @@
+/**
+ * @file
+ * Blur effect.
+ *
+ * While blurring animation impresses smoother transition, it is likely slow.
+ * You can override this file, and change animation to just transition instead.
+ */
+
+@-webkit-keyframes blazyBlur {
+  0% {
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes blazyBlur {
+  0% {
+    transform: scale(1.04);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/**
+Remove overflow as needed if CSS background is enabled, or on your own.
+.blazy {
+  overflow: hidden;
+}
+*/
+
+.media--fx--blur .b-lazy {
+  filter: blur(6px);
+  opacity: 1;
+  /* transition: opacity 500ms ease-in-out; */
+  transition: none;
+  transform: scale(1.04);
+}
+
+.media--fx--blur .b-loaded {
+  filter: blur(0);
+  transform: scale(1);
+  /** will-change: transform, opacity; */
+  -webkit-animation: blazyBlur 1s ease-out;
+  animation: blazyBlur 1s ease-out;
+}

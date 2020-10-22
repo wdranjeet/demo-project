@@ -1,0 +1,631 @@
+/**
+ * If using a CSS pre-processor, tell it to overwrite this file. If not, place
+ * your custom CSS modifications here.
+ */
+@import url("https://fonts.googleapis.com/css?family=Public+Sans:400,600,700&display=swap");
+
+body,
+html {
+  font-size: 16px;
+  line-height: 28px;
+  color: #333333;
+  height: 100%;
+  margin: 0 !important;
+  font-family: "Public Sans", sans-serif;
+}
+
+/*.dialog-off-canvas-main-canvas {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+img {
+  margin: 0;
+  max-width: 100%;
+}*/
+
+.navbar.navbar-inverse .container {
+  width: 100%;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+/*header nav {*/
+/*background: black !important;*/
+/*min-height: 151px !important;*/
+/*  padding: 0;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}*/
+
+header .navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 5px;
+}
+
+.navbar {
+  margin-bottom: unset !important;
+}
+header .navbar-brand img {
+  width: auto !important;
+  height: 116px;
+}
+
+header .navbar-inverse .navbar-nav > li > a,
+header .navbar-section .nice-menu > li > a {
+  color: #fff;
+  font-size: 16px;
+}
+
+header .navbar-section {
+  /*background: #080b41;*/
+  width: 100%;
+  height: auto;
+}
+
+header #block-nicemenus {
+  background: #080b41;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus,
+.nice-menu > li > a:hover,
+.nice-menu > li > a:focus {
+  text-decoration: none;
+  background-color: #043a69 !important;
+}
+
+/*header .navbar-section .nice-menu > li {
+  border-right: 1px solid #fff !important;
+}*/
+
+.navbar-inverse {
+  background-color: unset !important;
+  border-color: unset !important;
+}
+
+header nav {
+  border: unset !important;
+}
+
+.navbar-collapse {
+  padding-right: unset !important;
+  padding-left: unset !important;
+}
+
+header .navbar-inverse .nice-menu > li {
+  background: black;
+  margin: 0px 1px 0px 0px;
+}
+
+ul.nice-menu-right,
+ul.nice-menu-left,
+ul.nice-menu-right li,
+ul.nice-menu-left li {
+  width: auto !important;
+}
+
+ul.nice-menu li {
+  /*border-right: 1px solid #fff !important;
+  border-right-color: unset !important;
+  border-right-style: unset !important;
+  border-right-width: unset !important;
+  border-top: 0;
+  float: left;
+  background-color: unset !important;*/
+  background-color: inherit !important;
+  border-right: 1px #fff solid !important;
+  border-left: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  padding: 5px;
+}
+
+ul.nice-menu li > ul {
+  width: unset;
+  left: unset;
+  top: unset;
+}
+
+ul.nice-menu li > ul > li {
+  line-height: auto;
+  height: auto;
+  padding: 8px 10px;
+  white-space: normal;
+  text-indent: 0;
+  box-sizing: border-box;
+  width: 100% !important;
+  margin-right: 0.5em;
+  border-top: 1px #fff solid;
+  border-left: none;
+  border-right: none;
+  background: #f1f1f1 !important;
+}
+
+ul.nice-menu li > ul > li > a {
+  color: #000;
+}
+
+ul.nice-menu li > ul > li:hover > a,
+ul.nice-menu li > ul > li:hover {
+  color: #fff;
+  background: #043a69;
+}
+li:hover > ul.nice-menu {
+  display: block;
+  position: absolute;
+  width: 21em;
+  top: -2px;
+  left: 100%;
+  z-index: 1000;
+  border: 1px #1b1b1b solid;
+}
+li:hover {
+  position: relative;
+  z-index: 2000;
+}
+
+header nav a.navbar-brand {
+  height: 60px;
+}
+
+.view-display-id-home_latest_news .view-content .marquee-row a {
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.view-display-id-home_latest_news .view-header p,
+.view-display-id-home_latest_news .view-footer p {
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.view-display-id-home_latest_news .view-header,
+.view-display-id-home_latest_news .view-content,
+.view-display-id-home_latest_news .view-footer {
+  float: left;
+}
+
+.view-display-id-home_latest_news .view-footer p {
+  font-size: 0.8em;
+  padding-left: 5px;
+}
+.view-display-id-home_latest_news .view-footer span {
+  font-size: 1.3em;
+  color: #ffcc00;
+}
+
+.view-display-id-home_latest_news {
+  background: #043a69;
+  width: 100%;
+  height: 2em;
+  line-height: 1.7em;
+  border-top: #fff 1px solid;
+}
+
+.view-display-id-home_latest_news .view-content {
+  width: 70%;
+}
+.view-display-id-home_latest_news .view-header {
+  width: 6%;
+}
+
+#block-views-block-latest-news-home-page-popup-news {
+  display: none;
+}
+#spb-block-views-block-latest-news-home-page-popup-news .spb_center {
+  top: 30%;
+}
+#spb-block-views-block-latest-news-home-page-popup-news {
+  border: 5px solid #02427d;
+  border-radius: 5px;
+}
+#spb-block-views-block-latest-news-home-page-popup-news
+  .view-latest-news
+  .view-content {
+  width: 100%;
+  font-size: 13px;
+}
+ul.nice-menu-right li.menuparent,
+ul.nice-menu-right li li.menuparent {
+  background: unset !important;
+}
+
+.bg-light-red {
+  background-color: #fff6e7;
+}
+
+.ml-md-60 {
+  margin-left: 60px;
+}
+
+.bg-gray {
+  background-color: #f4f4f4;
+}
+
+.bg-light-blue {
+  background-color: #ecfaff;
+}
+
+.bg-light-orange {
+  background-color: #f4f7ff;
+}
+
+.bg-light-red {
+  background-color: #fff6e7;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.ml-md-60 {
+  margin-left: 60px;
+}
+
+.bg-gray {
+  background-color: #f4f4f4;
+}
+
+.bg-light-blue {
+  background-color: #ecfaff;
+}
+
+.bg-light-orange {
+  background-color: #f4f7ff;
+}
+
+.bg-light-red {
+  background-color: #fff6e7;
+}
+
+.ml-md-60 {
+  margin-left: 60px;
+}
+
+/* footer */
+.copyright {
+  background: #c3c3c3;
+  text-align: center;
+  font-size: 15px;
+  /*padding: 10px 5px 5px;*/
+  clear: both;
+  font-weight: 400;
+  color: #333333;
+  line-height: 35px;
+  position: relative;
+}
+
+.menu.menu--footer.nav {
+  margin: 0;
+  padding: 0;
+}
+
+.menu.menu--footer.nav > li {
+  display: inline-block;
+  padding: 0 5px;
+  border-right: 1px solid #333;
+  line-height: normal;
+}
+
+.menu.menu--footer.nav > li.last {
+  border-right: none;
+}
+
+.menu.menu--footer.nav > li > a {
+  color: #333;
+}
+
+.menu.menu--footer.nav > li > a:hover {
+  background-color: unset;
+}
+/* end footer here */
+
+/*Slick Slider Start*/
+.slick-slider {
+  position: relative;
+  background: url(../images/banner_background.jpg) repeat;
+  display: block;
+  box-sizing: border-box;
+}
+.slick img {
+  display: block;
+  width: 100%;
+}
+/*Slick Slider End*/
+/*Performance Block*/
+.block-views-blockperformance-block-1 {
+  background: url(../images/counter_bg.png);
+  background-size: cover;
+  padding: 30px;
+  text-align: center;
+}
+.block-views-blockperformance-block-1 .icegate-grid .field-content {
+  width: 30%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  float: left;
+}
+.block-views-blockperformance-block-1 .block-title {
+  color: #133053;
+  font-weight: bold;
+  position: relative;
+  line-height: normal;
+  display: inline-block;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.block-views-blockperformance-block-1 .icegate-grid .counter {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  left: 0;
+  background: #fff;
+  color: #133053;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+.block-views-blockperformance-block-1 .block-title.white {
+  color: #ffffff;
+}
+
+.block-views-blockperformance-block-1 .block-title:before {
+  background: url(../images/heading_left.png) no-repeat;
+  filter: invert(100%);
+}
+
+.block-views-blockperformance-block-1 .block-title:after {
+  background: url(../images/heading_right.png) no-repeat;
+  filter: invert(100%);
+}
+.block-views-blockperformance-block-1 .block-title:before,
+.block-views-blockperformance-block-1 .block-title:after {
+  content: "";
+  width: 72px;
+  height: 12px;
+  position: absolute;
+  top: 14px;
+}
+.block-views-blockperformance-block-1 .small-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+/*Performance Block End*/
+
+/*Our Service Start*/
+.block-views-blockicegate-services-tabs-block-1,
+.block-views-blockawards-and-recognitions-block-1 {
+  padding: 40px;
+  background: #fff;
+  text-align: center;
+}
+.overlay-layout {
+  height: 200px;
+  overflow: hidden;
+  box-shadow: 2px 2px 6px #ccc;
+  border-radius: 5px;
+  margin: 13px;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: 500;
+  color: #133054;
+  padding-top: 50px;
+  position: relative;
+  box-sizing: border-box;
+  transition: all 0.5s;
+  width: 100%;
+  text-align: center;
+}
+.overlay-layout .img-responsive {
+  display: inline-block !important;
+}
+
+#quicktabs-container-icegate-services-tabs .field-content .view-content {
+  margin: 0 -15px;
+}
+#quicktabs-container-icegate-services-tabs
+  .field-content
+  .view-content
+  .icegate-grid {
+  width: 25%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.overlay-layout .inner-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  background: rgba(4, 58, 105, 0.9);
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.5s ease-out;
+  bottom: -200px;
+  line-height: 1.8;
+}
+
+.overlay-layout:hover .inner-overlay {
+  bottom: 0;
+}
+
+.overlay-layout .inner-overlay h5 {
+  margin: 20px 0 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.overlay-layout .inner-overlay a {
+  background: #fff;
+  padding: 5px 10px;
+  color: #043a69;
+  border: 1px solid #0c2645;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  margin: 10px 0 0;
+  background: linear-gradient(to left, #fff 50%, #e67817 50%);
+  background-size: 202% 99%;
+  background-position: right bottom;
+  transition: all 0.3s ease-out;
+}
+.overlay-layout .inner-overlay a:hover {
+  color: #fff;
+  background-position: left bottom;
+}
+ul.quicktabs-tabs {
+  padding: 0;
+  margin: 0;
+  background: #e6e6e6;
+  overflow: hidden;
+}
+ul.quicktabs-tabs li {
+  width: 25%;
+  padding: 0;
+  border-right: 1px solid #fff;
+  float: left;
+  box-sizing: border-box;
+  white-space: normal;
+}
+ul.quicktabs-tabs li a {
+  display: block;
+  padding: 10px 15px;
+  background: none;
+  transition: all 0.3s ease-out;
+  font-size: 14px;
+  color: #828080;
+}
+ul.quicktabs-tabs li a:hover {
+  background: #d2d2d2;
+  text-decoration: none;
+}
+ul.quicktabs-tabs li.active a,
+ul.quicktabs-tabs li.active a:hover {
+  background: #e67817;
+  color: #fff;
+  text-decoration: none;
+}
+
+.block-views-blockicegate-services-tabs-block-1 .block-title,
+.block-views-blockawards-and-recognitions-block-1 .block__title {
+  font-size: 26px;
+  color: #133053;
+  font-weight: bold;
+  position: relative;
+  line-height: normal;
+  line-height: normal;
+  display: inline-block;
+  padding: 0;
+  margin-bottom: 55px;
+}
+.view-icegate-services-tabs ul li a span.btn-title {
+  font-size: 12px;
+  font-weight: normal;
+}
+.block-title:before,
+.block__title:before {
+  background: url(../images/heading_left.png) no-repeat;
+  left: -82px;
+}
+.block-title:after,
+.block__title:after {
+  background: url(../images/heading_right.png) no-repeat;
+  right: -82px;
+}
+.block-title:before,
+.block__title:before,
+.block-title:after,
+.block__title:after {
+  content: "";
+  width: 72px;
+  height: 12px;
+  position: absolute;
+  top: 14px;
+}
+
+/*Our Service End*/
+
+.view-awards-and-recognitions .view-content .icegate-grid {
+  width: 20%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  float: left;
+}
+
+/* Cutome block */
+.contact-bg {
+  background: url(../images/get_in_touch.png);
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 25px 15px;
+}
+
+.contact-bg h3 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 2em;
+}
+
+.support-sz {
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-right: 25px;
+  padding-right: 25px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.get-touch a {
+  color: #fff;
+}
+
+.support-sz img {
+  margin-right: 7px;
+  top: 3px;
+  position: relative;
+}
+
+.contact-bg a:hover {
+  color: #ff9932;
+}
+
+.w3c-verified {
+  right: 13px;
+  position: absolute;
+  top: 18px;
+}
+
+.view.view-icegate-footer-icons {
+  padding: 10px 0;
+  background: #e6e6e6;
+}
+
+.view.view-icegate-footer-icons ul li {
+  margin: 0 30px;
+  float: none;
+  display: inline-block;
+}
+
+.footer {
+  border-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+/* end here */
+/* CSS End */

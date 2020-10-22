@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service_short
+    - node.type.our_services
+  module:
+    - text
+id: node.our_services.field_service_short
+field_name: field_service_short
+entity_type: node
+bundle: our_services
+label: 'Service Short'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

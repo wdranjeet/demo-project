@@ -1,0 +1,4 @@
+.marquee-direction-right .marquee-row,
+.marquee-direction-left .marquee-row {
+    display: inline-block;
+}

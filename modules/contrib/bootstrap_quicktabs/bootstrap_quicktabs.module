@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Contains bootstrap_quicktabs.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bootstrap_quicktabs_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bootstrap_quicktabs module.
+    case 'help.page.bootstrap_quicktabs':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Makes tabs from Bootstrap framework available to the Quicktabs module.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bootstrap_quicktabs_theme() {
+  return [
+    'bootstrap_tabs' => [
+      'variables' => [
+        'content' => NULL,
+        'tabs' => NULL,
+        'options' => NULL,
+      ],
+      'template' => 'bootstrap-tabs',
+    ],
+    'bootstrap_tabs_tabs' => [
+      'template' => 'bootstrap-tabs-tabs',
+    ],
+    'bootstrap_accordion' => [
+      'variables' => [
+        'classes' => NULL,
+        'id' => NULL,
+        'panels' => NULL,
+      ],
+      'template' => 'bootstrap-accordion',
+    ],
+  ];
+}

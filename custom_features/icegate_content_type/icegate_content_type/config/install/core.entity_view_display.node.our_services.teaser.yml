@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.our_services.field_category
+    - field.field.node.our_services.field_service_short
+    - field.field.node.our_services.field_services_icon
+    - field.field.node.our_services.field_services_link
+    - node.type.our_services
+  module:
+    - user
+id: node.our_services.teaser
+targetEntityType: node
+bundle: our_services
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_category: true
+  field_service_short: true
+  field_services_icon: true
+  field_services_link: true

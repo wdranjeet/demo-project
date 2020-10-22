@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme for Quick Tabs module's block content.
+ *
+ * Available variables:
+ * - options: options array for the nav type
+ * - tabs: the array of titles
+ *
+ * @ingroup themeable
+ */
+#}
+<ul{{ create_attribute({'class': [options.classes]}) }}>
+    {% for tab_id, tab in tabs %}
+        <li{{ create_attribute({'class': [tab.classes], 'role':'presentation'}) }}><a href="#{{ tab_id }}" data-toggle="tab">{{ tab.title }}</a></li>
+    {% endfor %}
+</ul>

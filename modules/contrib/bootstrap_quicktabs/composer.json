@@ -1,0 +1,21 @@
+{
+  "name": "drupal/bootstrap_quicktabs",
+  "type": "drupal-module",
+  "description": "Makes tabs from Bootstrap framework available to the Quicktabs module.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/bootstrap_quicktabs",
+  "authors": [
+    {
+      "name": "Shelane French (shelane)",
+      "homepage": "https://www.drupal.org/u/shelane",
+      "role": "Maintainer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/bootstrap_quicktabs",
+    "source": "http://cgit.drupalcode.org/bootstrap_quicktabs"
+  },
+  "require": { }
+}
