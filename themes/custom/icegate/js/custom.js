@@ -1,12 +1,12 @@
 (function ($, Drupal) {
   $(document).ready(function () {
-   //Calling countUp()
+    //Calling countUp()
     countUp();
     //addSpanTag for small Text
     addSpanTag();
 
     function countUp() {
-     $(".timer").each(function () {
+      $(".timer").each(function () {
         var $this = $(this);
         countTo = $this.attr("data-to");
         $($this).numScroll({
@@ -19,8 +19,8 @@
     }
 
     /*
-    *AddSpanTag to Tab on home Page
-    */
+     *AddSpanTag to Tab on home Page
+     */
     function addSpanTag() {
       var SerVicesSmallTags = [
         "ICEGATE",
